@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :booking
   validates :content, :rating, presence: true
-  validates :rating, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
-  validates :content, length: { minumum: 10, message: "must be at least 10 characters long" }
+  validates :rating, numericality: { in: 1.0..5.0 }
+  validates :content, length: { minimum: 10, message: "must be at least 10 characters long" }
 end
