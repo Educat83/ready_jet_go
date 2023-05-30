@@ -12,11 +12,11 @@ class BookingsController < ApplicationController
   def create
     @plane = Plane.find(params[:plane_id])
     @booking = Booking.new(booking_params)
-    @booking.total_price = booking_params["total_hours"] * @plane.fh_price
-    @booking.user_id = current_user.id
-    @booking.plane_id = @plane.id
+    @booking.total_price = booking_params["total_hours"].to_i * @plane.fh_price
+    @booking.user = current_user
+    @booking.plane = @plane
     if @booking.save
-      redirect_to plane_bookings_path(@plane)
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
