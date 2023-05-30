@@ -11,6 +11,7 @@ User.destroy_all
 puts 'Cleaning plane data base'
 Plane.destroy_all
 
+# User creation
 puts 'Creating user db'
 count = 1
 10.times do
@@ -68,7 +69,7 @@ pictures = [
 
 50.times do
   plane = Plane.new(
-    model: "#{plane_names.sample} #{plane_number.sample.to_s}",
+    model: "#{plane_names.sample} #{plane_number.sample}",
     location: 'LHR',
     pax_capacity: pax_number.sample,
     fh_range: range_number.sample,
