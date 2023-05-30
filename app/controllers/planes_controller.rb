@@ -31,7 +31,7 @@ class PlanesController < ApplicationController
   def update
     @plane = Plane.find(params[:id])
     if @plane.update(plane_params)
-      redirect_to @plane, notice: "#{@plane.model} was successfully updated."
+      rredirect_to plane_path(@plane), notice: "#{@plane.model} was successfully updated."
     else
       render :edit
     end
