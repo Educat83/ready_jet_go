@@ -1,10 +1,16 @@
 <h1>Planes Index</h1>
 
-<ul>
+<%# <% cl_image_path(:cloud_name => cloudinary)%>
+
+<div class="container">
+  <div class="row col-4 col-sm-12 cards">
   <% @planes.each do |plane| %>
-  <li> <%= plane.model %> </li>
-  <li> <%= plane.pax_capacity %> </li>
-  <li> <%= plane.fh_range %> </li>
+  <div class="card" >
+  <h4><%= plane.model %></h4>
+  <p>Max Passengers: <%= plane.pax_capacity %></p>
+  <p>Flight Hours: <%= plane.fh_range %></p>
   <%= link_to "More info", plane_path(plane.id) %>
+  </div>
   <% end %>
-</ul>
+  </div>
+</div>
