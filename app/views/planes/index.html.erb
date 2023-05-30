@@ -2,7 +2,7 @@
 
 <ul>
   <% @planes.each do |plane| %>
-  <li> <%= plane.model %> </li>
+  <li> <%= link_to plane.model, plane_path(plane) %> </li>
   <li> <%= plane.pax_capacity %> </li>
   <li> <%= plane.fh_range %> </li>
   <%= link_to "More info", plane_path(plane.id) %>
