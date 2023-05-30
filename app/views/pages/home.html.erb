@@ -10,4 +10,12 @@
   <%= link_to "Login", new_user_session_path %>
   <br>
   <%= link_to "Sign up", new_user_registration_path %>
+
+  <%= form_tag planes_path, method: :get do %>
+  <%= label_tag :date, "Select a Date" %>
+  <%= date_field_tag :date, value: params[:date] %>
+
+  <%= submit_tag "Show me available planes" %>
+<% end %>
+
 <% end %>
