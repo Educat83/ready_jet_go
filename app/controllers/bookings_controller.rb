@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  def index
+  def new
     @booking = Booking.all
   end
 end

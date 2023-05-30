@@ -1,13 +1,16 @@
+<%= link_to "Home", root_path %>
+<%= link_to "See our planes", planes_path %>
+<%= link_to "Book this plane", new_plane_booking_path(@plane) %>
+
 <%= @plane.model %>
 <%= @plane.pax_capacity %>
 <%= @plane.fh_price %>
 <%= @plane.fh_range %>
 <%= @plane.location %>
 
-<%= link_to "See our planes", planes_path %>
 
+<%# edit page will only appear if you're the user %>
 <% if @plane.user == current_user %>
-
 <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
   <%= form.label :model %>
   <%= form.text_field :model %>
