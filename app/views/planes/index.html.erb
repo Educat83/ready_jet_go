@@ -1,0 +1,9 @@
+<h1>Planes Index</h1>
+
+<ul>
+  <% @planes.each do |plane| %>
+  <li> <%= plane.model %> </li>
+  <li> <%= plane.pax_capacity %> </li>
+  <li> <%= plane.fh_range %> </li>
+  <% end %>
+</ul>
