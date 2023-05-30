@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts 'Cleaning data base'
+Plane.destroy_all
+puts "Creating plane model"
+planes = Plane.create([
+  {model: 'Cessna 510', location: 'LHR', pax_capacity: 4, fh_range: 3, fh_price: 1700}
+])
+puts "#{planes.length} planse created"
