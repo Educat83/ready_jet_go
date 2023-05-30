@@ -30,6 +30,7 @@ puts 'User data base created'
 # Plane seeding
 
 puts "Creating plane model"
+
 plane_names = [
   "Cessna",
   'Learjet',
