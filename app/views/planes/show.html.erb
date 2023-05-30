@@ -4,7 +4,9 @@
 <%= @plane.fh_range %>
 <%= @plane.location %>
 
-<%= link_to "See our planes", :back %>
+<%= link_to "See our planes", planes_path %>
+
+<% if @plane.user == current_user %>
 
 <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
   <%= form.label :model %>
@@ -23,4 +25,6 @@
   <%= form.text_area :location %>
 
   <%= form.submit "Update Plane" %>
+
+<% end %>
 <% end %>
