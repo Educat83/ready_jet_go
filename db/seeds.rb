@@ -11,4 +11,4 @@ puts "Creating plane model"
 planes = Plane.create([
   {model: 'Cessna 510', location: 'LHR', pax_capacity: 4, fh_range: 3, fh_price: 1700}
 ])
-puts "#{planes.length} planse created"
+puts "#{planes.length} planes created"

@@ -2,7 +2,10 @@
 <p>Your Jet, Your Journey - Ready Jet Go</p>
 
 <%= link_to "Browse our selection of jets", planes_path %>
-<br>
-<%= link_to "Login", new_user_session_path %>
-<br>
-<%= link_to "Sign up", new_user_registration_path %>
+
+<% if user_signed_in? %>
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}%>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>
+  <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
