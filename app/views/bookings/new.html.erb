@@ -1,0 +1,7 @@
+<h1>New booking</h1>
+
+<%= simple_form_for [@plane, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :total_hours %>
+  <%= f.submit "Book", class: "btn btn-primary" %>
+<% end %>

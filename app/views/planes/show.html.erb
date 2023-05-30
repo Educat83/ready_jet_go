@@ -8,26 +8,23 @@
 <%= @plane.fh_range %>
 <%= @plane.location %>
 
-
-<%# edit page will only appear if you're the user %>
 <% if @plane.user == current_user %>
-<%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
-  <%= form.label :model %>
-  <%= form.text_field :model %>
+  <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
+    <%= form.label :model %>
+    <%= form.text_field :model %>
 
-  <%= form.label :pax_capacity %>
-  <%= form.text_area :pax_capacity %>
+    <%= form.label :pax_capacity %>
+    <%= form.text_area :pax_capacity %>
 
-  <%= form.label :fh_range %>
-  <%= form.text_area :fh_range %>
+    <%= form.label :fh_range %>
+    <%= form.text_area :fh_range %>
 
-  <%= form.label :fh_price %>
-  <%= form.text_area :fh_price %>
+    <%= form.label :fh_price %>
+    <%= form.text_area :fh_price %>
 
-  <%= form.label :location %>
-  <%= form.text_area :location %>
+    <%= form.label :location %>
+    <%= form.text_area :location %>
 
-  <%= form.submit "Update Plane" %>
-
-<% end %>
+    <%= form.submit "Update Plane" %>
+  <% end %>
 <% end %>
