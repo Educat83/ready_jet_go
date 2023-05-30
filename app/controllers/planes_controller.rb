@@ -1,4 +1,5 @@
 class PlanesController < ApplicationController
+
   def index
     @planes = Plane.all
   end
@@ -9,6 +10,7 @@ class PlanesController < ApplicationController
 
   def new
     @plane = Plane.new
+    @plane.user_id = current_user.id
   end
 
   def create
@@ -21,6 +23,7 @@ class PlanesController < ApplicationController
   end
 
   def edit
+    before_action :authenticate_user!
     @plane = Plane.find(params[:id])
   end
 
@@ -36,6 +39,6 @@ class PlanesController < ApplicationController
   private
 
   def plane_params
-    params.require(:plane).permit(:model, :pax_capacity, :fh_price, :fh_range, :location)
+    params.require(:plane).permit(:model, :pax_capacity, :fh_price, :fh_range, :location, :user_id)
   end
 end
