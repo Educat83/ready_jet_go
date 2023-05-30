@@ -4,3 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 end
+
+private
+
+def customer_params
+  params.require(:page).permit(:model, :pax_capacity, :fh_price, :fh_range, :location, :user_id)
+end

@@ -1,0 +1,10 @@
+.cards {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.card {
+  background-color: rgb(202, 236, 243);
+}
