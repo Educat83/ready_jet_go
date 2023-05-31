@@ -9,7 +9,7 @@
     <div class="dropdown">
       <div class="login-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa-solid fa-user"></i>
-        <p><%= current_user.first_name.capitalize %></p>
+        <p><%= current_user.first_name.capitalize %> </p>
       </div>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to "Your bookings", bookings_path, class: "dropdown-item"%>
