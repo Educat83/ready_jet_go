@@ -1,0 +1,6 @@
+
+<%= simple_form_for [@plane, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :total_hours %>
+  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+<% end %>
