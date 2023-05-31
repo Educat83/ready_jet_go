@@ -1,9 +1,21 @@
+<div class='title'>
 <h1>Your bookings index</h1>
+</div>
 
-<% @bookings.each do |booking| %>
-<p><%= booking.total_price %>, <%= booking.date %> </p>
-<%= link_to 'Edit', edit_plane_booking_path(booking.plane.id, booking.id) %>
-<%= link_to "Cancel this booking",
-  booking_path(booking),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
+<div class="container">
+  <div class="my-cards">
+    <% @bookings.each do |booking| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Booking reference: <%= booking.id %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary"> Cost: £<%= booking.total_price %></h6>
+          <p class="card-text"> Date: <%= booking.date %> </p>
+          <%= link_to 'Modify', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
+          <%= link_to "Cancel it!",
+            booking_path(booking),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

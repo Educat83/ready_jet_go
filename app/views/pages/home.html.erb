@@ -1,8 +1,8 @@
-<div class = "container">
-
-  <h1>Ready Jet Go</h1>
-  <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go!</em></p>
-
-  <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
-
+<div class="homepage">
+  <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
+  <div class="banner">
+    <h1>Ready Jet Go</h1>
+    <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
+    <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
+  </div>
 </div>
