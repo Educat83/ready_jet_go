@@ -43,7 +43,7 @@ class PlanesController < ApplicationController
   def destroy
     @plane = Plane.find(params[:id])
     @plane.destroy
-    redirect_to planes_path, status: :see_other
+    redirect_to planes_path, notice: 'Plane was successfully deleted.', status: :see_other
   end
 
   private
