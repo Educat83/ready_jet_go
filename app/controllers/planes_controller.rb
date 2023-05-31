@@ -1,13 +1,12 @@
 class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_plane, only: %i[show update]
 
   def index
     @planes = Plane.all
   end
 
-  def show
-    @plane = Plane.find(params[:id])
-  end
+  def show; end
 
   def new
     @plane = Plane.new
@@ -25,19 +24,22 @@ class PlanesController < ApplicationController
 
   def edit
     before_action :authenticate_user!
-    @plane = Plane.find(params[:id])
+    set_plane
   end
 
   def update
-    @plane = Plane.find(params[:id])
     if @plane.update(plane_params)
-      rredirect_to plane_path(@plane), notice: "#{@plane.model} was successfully updated."
+      redirect_to plane_path(@plane), notice: "#{@plane.model} was successfully updated."
     else
       render :edit
     end
   end
 
   private
+
+  def set_plane
+    @plane = Plane.find(params[:id])
+  end
 
   def plane_params
     params.require(:plane).permit(:model, :pax_capacity, :fh_price, :fh_range, :location, :user_id)
