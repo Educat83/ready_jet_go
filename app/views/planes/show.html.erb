@@ -27,3 +27,9 @@
     <%= form.submit "Update Plane" %>
   <% end %>
 <% end %>
+
+<% if @plane.user == current_user %>
+  <%= link_to "Delete",
+  plane_path(@plane),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
