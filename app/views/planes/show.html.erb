@@ -1,35 +1,45 @@
 <%= link_to "See our planes", planes_path %>
-<%= link_to "Book this plane", new_plane_booking_path(@plane) %>
 
-<%= @plane.model %>
-<%= @plane.pax_capacity %>
-<%= @plane.fh_price %>
-<%= @plane.fh_range %>
-<%= @plane.location %>
+<div class="container">
+  <%= cl_image_tag(@plane.photo.key, width: 600, height: 400, crop: :fill) %>
+  <h1><%= @plane.model %></h1>
+  <div class = "details">
+    <div class = "details-column">
+      <p>Passenger Capacity: <%= @plane.pax_capacity %></p>
+      <p>Flight Range: <%= @plane.fh_range %> hours</p>
+    </div>
+    <div class = "details-column">
+      <p>Current Location: <%= @plane.location %></p>
+      <p>Flight Hour Price: £<%= @plane.fh_price %></p>
+    </div>
+  </div>
+  <br>
+  <a href="<%= new_plane_booking_path(@plane) %>" class="button">Book this plane</a>
 
-<% if @plane.user == current_user %>
-  <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
-    <%= form.label :model %>
-    <%= form.text_field :model %>
+  <% if @plane.user == current_user %>
+    <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
+      <%= form.label :model %>
+      <%= form.text_field :model %>
 
-    <%= form.label :pax_capacity %>
-    <%= form.text_area :pax_capacity %>
+      <%= form.label :pax_capacity %>
+      <%= form.text_area :pax_capacity %>
 
-    <%= form.label :fh_range %>
-    <%= form.text_area :fh_range %>
+      <%= form.label :fh_range %>
+      <%= form.text_area :fh_range %>
 
-    <%= form.label :fh_price %>
-    <%= form.text_area :fh_price %>
+      <%= form.label :fh_price %>
+      <%= form.text_area :fh_price %>
 
-    <%= form.label :location %>
-    <%= form.text_area :location %>
+      <%= form.label :location %>
+      <%= form.text_area :location %>
 
-    <%= form.submit "Update Plane" %>
+      <%= form.submit "Update Plane" %>
+    <% end %>
   <% end %>
-<% end %>
 
-<% if @plane.user == current_user %>
-  <%= link_to "Delete",
-  plane_path(@plane),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<% end %>
+  <% if @plane.user == current_user %>
+    <%= link_to "Delete",
+    plane_path(@plane),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
+</div>
