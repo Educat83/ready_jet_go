@@ -37,6 +37,12 @@ class PlanesController < ApplicationController
     end
   end
 
+  def destroy
+    @plane = Plane.find(params[:id])
+    @plane.destroy
+    redirect_to planes_path, status: :see_other
+  end
+
   private
 
   def plane_params
