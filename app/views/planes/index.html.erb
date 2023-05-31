@@ -10,7 +10,7 @@
     <% @planes.each do |plane| %>
       <div class="mycard">
         <div class="card-img-top text-center my-3" id="pic">
-          <%= cl_image_tag(plane.photo.key, width: 280, height: 190, crop: :fill) %>
+          <%= cl_image_tag(plane.photo.key, width: 280, height: 190) %>
         </div>
         <div class="card-body">
           <h4><%= plane.model %></h4>
