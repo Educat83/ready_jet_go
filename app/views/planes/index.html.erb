@@ -1,3 +1,4 @@
+
 <div class="text-center">
   <h1 class="myh1">Our planes</h1>
 </div>
@@ -20,14 +21,5 @@
         </div>
       </div>
     <% end %>
-    
-  <div class="card" >
-    <h4><%= plane.model %></h4>
-    <p>Max Passengers: <%= plane.pax_capacity %></p>
-    <p>Flight Hours: <%= plane.fh_range %></p>
-    <%= link_to "More info", plane_path(plane.id) %>
-  </div>
-  <% end %>
-
   </div>
 </div>
