@@ -32,6 +32,7 @@
 .login-profile {
   text-align: center;
   margin-right: 10px;
+  color: white;
 
   i {
     font-size: 40px;
@@ -41,4 +42,13 @@
   p {
     margin: 0px;
   }
+}
+
+.login-profile:hover {
+  color: black;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: -2px;
 }

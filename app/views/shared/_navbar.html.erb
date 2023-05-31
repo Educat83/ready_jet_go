@@ -6,9 +6,17 @@
         <p>Home</p>
       <% end %>
     </div>
-    <div class="login-profile">
-      <i class="fa-solid fa-user"></i>
-      <p><%= current_user.first_name %></p>
+    <div class="dropdown">
+      <div class="login-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-solid fa-user"></i>
+        <p><%= current_user.first_name.capitalize %></p>
+      </div>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to "Your bookings", bookings_path, class: "dropdown-item"%>
+        <%= link_to "Your listings", root_path, class: "dropdown-item"%>
+        <%= link_to "Profile", root_path, class: "dropdown-item"%>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"%>
+      </div>
     </div>
   </div>
 <% else %>
@@ -20,13 +28,12 @@
       <% end %>
     </div>
     <div>
-      <%= link_to "Login", new_user_session_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to new_user_session_path do %>
+        <button type="button" class="btn btn-outline-light mr-5">Login</button>
+      <% end %>
+      <%= link_to new_user_registration_path do %>
+        <button type="button" class="btn btn-outline-light mr-2">Sign up</button>
+      <% end %>
     </div>
   </div>
 <% end %>
-
-<%= link_to "Your bookings", bookings_path%>
-<%= link_to "Your listings", root_path%>
-<%= link_to "Profile", root_path%>
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}%>
