@@ -5,8 +5,8 @@
 
 <%# <% cl_image_path(:cloud_name => cloudinary)%>
 
-<div class="blabla-container">
-  <div class="cards">
+<div class="container pb-5">
+  <div class="row col-4 col-sm-12 cards">
     <% @planes.each do |plane| %>
       <div class="mycard">
         <div class="card-img-top text-center my-3" id="pic">
@@ -22,8 +22,7 @@
     <% end %>
 
   </div>
-
-</div>
-<div class="p-5">
-    <a href="<%= new_plane_path%>" class="button bottom-btn">Have your own plane that you'd like to list? Click here!</a>
+  <div class="p-5">
+    <a href="<%= new_plane_path%>" class="button">Have your own plane that you'd like to list? Click here!</a>
+  </div>
 </div>
