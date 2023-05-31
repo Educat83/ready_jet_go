@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   flex-grow: 1;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr;
   grid-gap: 30px;
 }
 
@@ -28,6 +28,8 @@
   text-transform: uppercase;
 }
 
-.blabla-container {
-  width: 80vw;
-  margin: 0 auto;
+.my-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
