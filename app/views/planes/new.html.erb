@@ -6,6 +6,7 @@
   <%= f.input :fh_range %>
   <%= f.input :fh_price %>
   <%= f.input :location %>
+  <%= f.input :photo, as: :file %>
   <%= f.hidden_field :user_id, value: @plane.user_id %>
   <%= f.submit %>
 <% end %>
