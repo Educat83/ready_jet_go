@@ -1,16 +1,24 @@
-<h1>Planes Index</h1>
+<div class="text-center">
+  <h1 class="myh1">Our planes</h1>
+</div>
+
 
 <%# <% cl_image_path(:cloud_name => cloudinary)%>
 
 <div class="container">
   <div class="row col-4 col-sm-12 cards">
-  <% @planes.each do |plane| %>
-  <div class="card" >
-  <h4><%= plane.model %></h4>
-  <p>Max Passengers: <%= plane.pax_capacity %></p>
-  <p>Flight Hours: <%= plane.fh_range %></p>
-  <%= link_to "More info", plane_path(plane.id) %>
-  </div>
-  <% end %>
+    <% @planes.each do |plane| %>
+      <div class="mycard">
+        <div class="card-img-top text-center my-3" id="pic">
+          <%= cl_image_tag(plane.photo.key, width: 280, height: 190, crop: :fill) %>
+        </div>
+        <div class="card-body">
+          <h4><%= plane.model %></h4>
+          <p>Max Passengers: <%= plane.pax_capacity %></p>
+          <p>Flight Hours: <%= plane.fh_range %></p>
+            <%= link_to "More info", plane_path(plane.id), class: "mylink" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
