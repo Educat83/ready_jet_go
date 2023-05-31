@@ -5,7 +5,7 @@
 
 <%# <% cl_image_path(:cloud_name => cloudinary)%>
 
-<div class="container">
+<div class="container pb-5">
   <div class="row col-4 col-sm-12 cards">
     <% @planes.each do |plane| %>
       <div class="mycard">
@@ -22,7 +22,7 @@
     <% end %>
 
   </div>
-<br>
-  <a href="<%= new_plane_path%>" class="button">Have your own plane that you'd like to list? Click here!</a>
-<br>
+  <div class="p-5">
+    <a href="<%= new_plane_path%>" class="button">Have your own plane that you'd like to list? Click here!</a>
+  </div>
 </div>
