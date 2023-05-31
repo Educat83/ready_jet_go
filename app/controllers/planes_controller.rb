@@ -2,7 +2,10 @@ class PlanesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @planes = Plane.all
+    @date = params[:date]
+    @planes = Plane.left_joins(:bookings)
+                   .where('bookings.id IS NULL OR bookings.date = ?', @date)
+                   .distinct
   end
 
   def show
@@ -31,7 +34,7 @@ class PlanesController < ApplicationController
   def update
     @plane = Plane.find(params[:id])
     if @plane.update(plane_params)
-      rredirect_to plane_path(@plane), notice: "#{@plane.model} was successfully updated."
+      redirect_to plane_path(@plane), notice: "#{@plane.model} was successfully updated."
     else
       render :edit
     end
