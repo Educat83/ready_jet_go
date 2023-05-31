@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  scope :available_on_date, ->(date) { where('booking_date = ?', date) }
   belongs_to :user
   belongs_to :plane
   has_many :reviews
