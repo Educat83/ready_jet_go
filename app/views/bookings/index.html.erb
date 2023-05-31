@@ -2,4 +2,7 @@
 
 <% @bookings.each do |booking| %>
 <p><%= booking.total_price %>, <%= booking.date %></p>
+<%= link_to "Cancel this booking",
+  booking_path(booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
