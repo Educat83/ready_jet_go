@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  # before_action :set_booking, only: %i[index new create edit update]
-
   def index
     @bookings = Booking.all
   end
@@ -38,11 +36,13 @@ class BookingsController < ApplicationController
     end
   end
 
-  private
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path, notice: 'Booking was successfully deleted.', status: :see_other
+  end
 
-  # def set_booking
-  #   @plane = Plane.find(params[:plane_id])
-  # end
+  private
 
   def booking_params
     params.require(:booking).permit(:date, :total_hours, :total_price)

@@ -11,11 +11,4 @@
   <br>
   <%= link_to "Sign up", new_user_registration_path %>
 
-  <%= form_tag planes_path, method: :get do %>
-  <%= label_tag :date, "Select a Date" %>
-  <%= date_field_tag :date, value: params[:date] %>
-  <%= label_tag :passenger_count, "Number of Passengers" %>
-  <%= select_tag :passenger_count, options_for_select((1..30).to_a) %>
-  <%= submit_tag "Browse our selection of available planes", class: "btn btn-primary" %>
-<% end %>
 <% end %>

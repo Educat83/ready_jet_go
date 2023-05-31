@@ -3,7 +3,10 @@ class PlanesController < ApplicationController
   before_action :set_plane, only: %i[show update]
 
   def index
-    @planes = Plane.all
+    @date = params[:date]
+    @planes = Plane.left_joins(:bookings)
+                   .where('bookings.id IS NULL OR bookings.date = ?', @date)
+                   .distinct
   end
 
   def show; end
@@ -33,6 +36,12 @@ class PlanesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @plane = Plane.find(params[:id])
+    @plane.destroy
+    redirect_to planes_path, notice: 'Plane was successfully deleted.', status: :see_other
   end
 
   private
