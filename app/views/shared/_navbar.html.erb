@@ -1,15 +1,25 @@
 <% if user_signed_in? %>
-  <div class="navbar">
-    <div class="home-button">
-      <%= link_to planes_path do %>
-        <i class="fa-solid fa-plane-departure"></i>
-        <p>Home</p>
-      <% end %>
-    </div>
+  <div class="navbar d-flex align-items-center justify-content-between">
+    <%= link_to planes_path, class: "navbar-item d-flex align-items-center" do %>
+      <%= image_tag 'plane-icon-256.png', alt: "plane", class: "favicon" %>
+    <% end %>
+
+    <%= form_tag planes_path, method: :get, class: "d-flex align-items-center" do %>
+      <div class="form-group my-date-field">
+        <%= label_tag :date, "Select a Date" %>
+        <%= date_field_tag :date, value: params[:date] %>
+      </div>
+      <div class="form-group my-passenger-field">
+        <%= label_tag :passenger_count, "Number of Passengers" %>
+        <%= select_tag :passenger_count, options_for_select((1..30).to_a) %>
+      </div>
+      <%= submit_tag "Browse", class: "btn btn-light my-button ml-2" %>
+    <% end %>
+
     <div class="dropdown">
-      <div class="login-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="login-profile d-flex align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa-solid fa-user"></i>
-        <p><%= current_user.first_name.capitalize %></p>
+        <p class="ml-2 mb-0"><%= current_user.first_name.capitalize %></p>
       </div>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to "Your bookings", bookings_path, class: "dropdown-item"%>
@@ -20,19 +30,17 @@
     </div>
   </div>
 <% else %>
-  <div class="navbar">
-    <div class="home-button">
-      <%= link_to planes_path do %>
-        <i class="fa-solid fa-plane-departure"></i>
-        <p>Home</p>
+  <div class="navbar d-flex align-items-center justify-content-between">
+    <%= link_to planes_path, class: "navbar-item d-flex align-items-center" do %>
+      <%= image_tag 'plane-icon-256.png', alt: "plane", class: "favicon" %>
+    <% end %>
+
+    <div class="navbar-right d-flex align-items-center">
+      <%= link_to new_user_session_path, class: "btn btn-outline-light mr-5" do %>
+        <p>Login</p>
       <% end %>
-    </div>
-    <div>
-      <%= link_to new_user_session_path do %>
-        <button type="button" class="btn btn-outline-light mr-5">Login</button>
-      <% end %>
-      <%= link_to new_user_registration_path do %>
-        <button type="button" class="btn btn-outline-light mr-2">Sign up</button>
+      <%= link_to new_user_registration_path, class: "btn btn-outline-light mr-2" do %>
+        <p>Sign up</p>
       <% end %>
     </div>
   </div>
