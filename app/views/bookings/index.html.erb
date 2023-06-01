@@ -2,9 +2,14 @@
 <h1>Your bookings index</h1>
 </div>
 
+<% my_bookings = @bookings.select { |booking| booking.user_id == current_user.id} %>
+<% if my_bookings.empty? %>
+<br>
+<h5 class="text-center">You've not made any bookings yet!</h5>
+<% else %>
 <div class="container">
   <div class="my-cards">
-    <% @bookings.each do |booking| %>
+    <% my_bookings.each do |booking| %>
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Booking reference: <%= booking.id %></h5>
@@ -19,3 +24,4 @@
     <% end %>
   </div>
 </div>
+<% end %>

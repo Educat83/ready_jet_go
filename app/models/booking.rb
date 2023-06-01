@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :plane
-  has_many :reviews
+  has_one :review, dependent: :destroy
 
   validates :total_hours, :total_price, :date, presence: true
   validates :total_hours, numericality: { only_float: true }

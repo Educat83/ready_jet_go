@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <div class="navbar">
     <div class="home-button">
-      <%= link_to root_path do %>
+      <%= link_to planes_path do %>
         <i class="fa-solid fa-plane-departure"></i>
         <p>Home</p>
       <% end %>
@@ -9,7 +9,7 @@
     <div class="dropdown">
       <div class="login-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa-solid fa-user"></i>
-        <p><%= current_user.first_name %></p>
+        <p><%= current_user.first_name.capitalize %></p>
       </div>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to "Your bookings", bookings_path, class: "dropdown-item"%>
@@ -22,7 +22,7 @@
 <% else %>
   <div class="navbar">
     <div class="home-button">
-      <%= link_to root_path do %>
+      <%= link_to planes_path do %>
         <i class="fa-solid fa-plane-departure"></i>
         <p>Home</p>
       <% end %>

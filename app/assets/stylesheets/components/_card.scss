@@ -5,6 +5,13 @@
   grid-gap: 30px;
 }
 
+.mycard {
+  background-color: rgb(217, 223, 224);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
 .card-body {
   text-align: center;
 }
@@ -147,4 +154,13 @@ p {
   &:hover:before {
     transform: scale(2.15);
   }
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
 }
