@@ -2,10 +2,17 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="price"
 export default class extends Controller {
-  static targets = ["hours", "totalprice"]
+  static targets = ["totalprice"]
+  static values = {
+    price: String
+  }
   connect() {
-    console.log("connected")
-    console.log(this.hoursTarget.innerHTML)
-    console.log(this.totalpriceTarget.innerHTML)
+  }
+
+  counter(event) {
+    const hours = parseInt(event.srcElement.value);
+    const fh_price = parseInt(this.priceValue);
+    const total_price = hours * fh_price;
+    this.totalpriceTarget.innerText=total_price;
   }
 }
