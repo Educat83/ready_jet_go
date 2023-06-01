@@ -5,12 +5,6 @@
   grid-gap: 30px;
 }
 
-.mycard {
-  background-color: rgb(217, 223, 224);
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 .card-body {
   text-align: center;
 }
@@ -34,10 +28,33 @@
   grid-gap: 16px;
 }
 
+.mycard {
+  background-color: $light-gray;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 33%;
+  overflow: hidden;
+  h3 {
+    padding-top: 5%;
+  }
+}
+
 .homeCards {
   display: flex;
-  flex-grow: 1;
-  align-items: center;
+  justify-content: space-around;
+  align-items: stretch;
   gap: 16px;
   margin: 16px;
+}
+
+.home_card_img {
+  height:300px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.responsive {
+  width: 100%;
+  // height: auto;
 }
