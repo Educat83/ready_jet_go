@@ -10,7 +10,8 @@ class PlanesController < ApplicationController
   end
 
   def show
-    @reviews = @plane.reviews
+    @booking = Booking.new
+    @plane_reviews = Booking.where(plane: @plane)
   end
 
   def new

@@ -3,11 +3,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def new
-    @plane = Plane.find(params[:plane_id])
-    @booking = Booking.new
-  end
-
   def create
     @plane = Plane.find(params[:plane_id])
     @booking = Booking.new(booking_params)
