@@ -13,10 +13,19 @@
           <%= cl_image_tag(plane.photo.key, width: 280, height: 190, crop: :fill) %>
         </div>
         <div class="card-body">
-          <h4><%= plane.model %></h4>
-          <p>Max Passengers: <%= plane.pax_capacity %></p>
-          <p>Flight Hours: <%= plane.fh_range %></p>
-            <%= link_to "More info", plane_path(plane.id), class: "mylink" %>
+          <h3><strong><%= plane.model %></strong></h3>
+          <br>
+          <div class="icon-text">
+            <span>
+              <i class="fa-solid fa-users"></i>
+              <h5><strong> <%= plane.pax_capacity %> seats</strong></h5>
+            </span>
+            <span>
+              <i class="fa-solid fa-plane"></i>
+              <h5> <%= plane.fh_range.to_i %> hrs</h5>
+            </span>
+          </div>
+          <%= link_to "More info", plane_path(plane.id), class: "mylink" %>
         </div>
       </div>
     <% end %>
