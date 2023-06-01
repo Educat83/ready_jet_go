@@ -1,5 +1,3 @@
-<%= link_to "See our planes", planes_path %>
-
 <div class="container">
   <%= cl_image_tag(@plane.photo.key, width: 600, height: 400, crop: :fill) %>
   <h1><%= @plane.model %></h1>
@@ -16,6 +14,8 @@
   <br>
 
   <%= render "shared/form", booking: @booking, plane: @plane %>
+
+  <a href="<%= planes_path %>" class="btn btn-info">See our other planes</a>
 
   <% if @plane.user == current_user %>
     <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>

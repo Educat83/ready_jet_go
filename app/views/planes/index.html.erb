@@ -8,17 +8,27 @@
 <div class="container pb-5">
   <div class="row col-4 col-sm-12 cards">
     <% @planes.each do |plane| %>
-      <div class="mycard">
-        <div class="card-img-top text-center my-3" id="pic">
-          <%= cl_image_tag(plane.photo.key, width: 280, height: 190, crop: :fill) %>
+      <a href="<%= plane_path(plane.id) %>" class="card-link">
+        <div class="mycard">
+          <div class="card-img-top text-center" id="pic">
+            <%= cl_image_tag(plane.photo.key, width: 400, height: 240, crop: :fill) %>
+          </div>
+          <div class="card-body my-3">
+            <h3><strong><%= plane.model %></strong></h3>
+            <br>
+            <div class="icon-text">
+              <span>
+                <i class="fa-solid fa-users"></i>
+                <h5><strong> <%= plane.pax_capacity %> seats</strong></h5>
+              </span>
+              <span>
+                <i class="fa-solid fa-plane"></i>
+                <h5> <%= plane.fh_range.to_i %> hrs</h5>
+              </span>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <h4><%= plane.model %></h4>
-          <p>Max Passengers: <%= plane.pax_capacity %></p>
-          <p>Flight Hours: <%= plane.fh_range %></p>
-            <%= link_to "More info", plane_path(plane.id), class: "mylink" %>
-        </div>
-      </div>
+      </a>
     <% end %>
 
   </div>
