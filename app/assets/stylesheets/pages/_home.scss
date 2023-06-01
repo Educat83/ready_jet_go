@@ -1,12 +1,4 @@
 // Specific CSS for your home-page
-.homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0px;
-  overflow: hidden;
-}
 
 h1 {
   text-align: center;
@@ -35,12 +27,14 @@ h1 {
 }
 
 .button:hover {
-  background-color: #1976D2;
+  background-color: $gray;
 }
 
 .home_video {
   position: absolute;
-  z-index: 1;
+  left: 0;
+  top: 0;
+  z-index: -1;
   height: 100%;
   width: 100%;
   top: 0px;
@@ -49,14 +43,15 @@ h1 {
 }
 
 .banner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60%;
-  height: fit-content;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  background: $white-transparent;
+  box-shadow: 0px 0px 3px 2px rgba($color: black, $alpha: 0.3);
+  border-radius: 10px;
 }
 
 body {

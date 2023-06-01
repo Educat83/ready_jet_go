@@ -1,8 +1,9 @@
-<div class="homepage">
-  <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
-  <div class="banner">
-    <h1>Ready Jet Go</h1>
-    <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
+
+    <div style='width: 100%; height: 400px; display: flex; flex-direction: column; justify-content: center; position: relative;'>
+      <div class="banner">
+    <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
+        <h1>Ready Jet Go</h1>
+        <p class="motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
     <%= form_tag planes_path, method: :get, class: "d-flex justify-content-around myform" do %>
       <div class="form-group my-date-field">
         <%= label_tag :date, "Select a Date" %>
@@ -13,6 +14,50 @@
       <%= select_tag :passenger_count, options_for_select((1..30).to_a) %>
       </div>
       <%= submit_tag "Browse our selection of available planes", class: "btn btn-light my-button" %>
-     <% end %>
-  </div>
-</div>
+     <% end %>      </div>
+    </div>
+
+    <div class="fullWidthContainer">
+      <h2>Flight your own way</h2>
+      <div class="homeCards">
+        <a class="card2" href="#">
+          <%= image_tag("sunset-plane.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive", style: 'object-position: 87% 50%') %>
+          <h3>Safety Accredited Aircraft,
+          </h3>
+          <p>We give you access to a safety & service accredited aircraft fleet for Jet Card and on-demand flights.</p>
+          <p>As an Argus Certified Broker, we work to the highest industry standards of safety and best practice.</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+        </a>
+        <a class="card2" href="#">
+          <%= image_tag("island-view.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive", style: 'object-position: 15% 50%') %>
+          <h3>
+            Anywhere. Any time.
+          </h3>
+          <p>PrivateFly offers private flights between any global airports.</p>
+          <p>Discover your closest private jet airports, see example pricing, destination facts & more.</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+          </a>
+        <a class="card2" href="#">
+            <%= image_tag("interior.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive") %>
+          <h3>
+            Flexible private flying.
+          </h3>
+          <p>Our Jet Card gives you the ultimate private flight flexibility.</p>
+          <p>Use your Jet Card for guaranteed availability, flexible cancellation and fixed hourly rates on our safety & service premium fleet.
+          </p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
