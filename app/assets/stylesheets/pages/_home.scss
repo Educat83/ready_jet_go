@@ -1,12 +1,12 @@
 // Specific CSS for your home-page
-.homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0px;
-  overflow: hidden;
-}
+// .homepage {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   margin-bottom: 0px;
+//   overflow: hidden;
+// }
 
 h1 {
   text-align: center;
@@ -50,11 +50,18 @@ h1 {
 
 .banner {
   position: relative;
-  top: 50%;
+  top: 28dvw;
   left: 50%;
-  margin-top: 400px;
+  // margin-top: 400px;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+.banner-inner-section {
   z-index: 2;
+  position: absolute;
+  top: 30vh;
+  left: 0vw;
+  width: 100%;
   text-align: center;
 }
 

@@ -1,7 +1,14 @@
 .my-container {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   flex-direction: row;
   flex-grow: 1;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.fullWidthContainer {
+  text-align: center;
+  margin: 10px;
 }
