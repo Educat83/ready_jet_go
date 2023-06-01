@@ -14,6 +14,22 @@
   <br>
   <a href="<%= new_plane_booking_path(@plane) %>" class="button">Book this plane</a>
   <br>
+  <p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @plane.reviews.each do |review| %>
+    <li class="list-group-item">
+      <%= review.content %>
+      <%= review.rating %>
+      <%= link_to "Delete",
+        review_path(review),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+       %>
+    </li>
+  <% end %>
+</ul>
+<br>
+<%= link_to "Add a new review", new_plane_review_path(@plane) %>
+<br>
   <a href="<%= planes_path %>" class="btn btn-info">See our other planes</a>
 
   <% if @plane.user == current_user %>

@@ -9,7 +9,9 @@ class PlanesController < ApplicationController
                    .distinct
   end
 
-  def show; end
+  def show
+    @reviews = @plane.reviews
+  end
 
   def new
     @plane = Plane.new

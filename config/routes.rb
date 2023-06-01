@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :destroy]
+
+  resources :planes do
+    resources :reviews, only: %i[new]
+  end
+
+  resources :reviews, only: [:destroy]
 end
