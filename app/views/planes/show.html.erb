@@ -17,7 +17,6 @@
 
   <%= render "shared/form", booking: @booking, plane: @plane %>
 
-
   <% if @plane.user == current_user %>
     <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
       <%= form.label :model %>

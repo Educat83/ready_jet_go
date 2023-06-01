@@ -1,6 +1,11 @@
 
 <%= simple_form_for [plane, booking] do |f| %>
   <%= f.input :date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :total_hours %>
-  <%= f.submit "Submit booking", class: "btn btn-primary" %>
+
+  <div data-controller="price">
+  <p data-price-target="hours"><%= f.input :total_hours, collection: 1..plane.fh_range %></p>
+  <p>Price: £<span data-price-target="totalprice">-</span></p>
+  </div>
+
+  <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
