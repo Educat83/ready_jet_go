@@ -3,6 +3,16 @@
   <div class="banner">
     <h1>Ready Jet Go</h1>
     <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
-    <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
+    <%= form_tag planes_path, method: :get, class: "d-flex justify-content-around myform" do %>
+      <div class="form-group my-date-field">
+        <%= label_tag :date, "Select a Date" %>
+        <%= date_field_tag :date, value: params[:date] %>
+      </div>
+      <div class="form-group my-passenger-field">
+      <%= label_tag :passenger_count, "Number of Passengers" %>
+      <%= select_tag :passenger_count, options_for_select((1..30).to_a) %>
+      </div>
+      <%= submit_tag "Browse our selection of available planes", class: "btn btn-light my-button" %>
+     <% end %>
   </div>
 </div>
