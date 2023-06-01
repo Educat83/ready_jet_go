@@ -1,37 +1,46 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-h1 {
-  // text-align: center;
-  font-size: 32px;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.details {
+.show-image {
+  height: 350px;
+  overflow: hidden;
   display: flex;
   justify-content: center;
-  flex-grow: 1;
-  grid-gap: 20px;
-  font-size: 25px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-top: 20px;
-  width: 50%
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+  img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
 }
 
-.details-column {
-  flex-basis: 50%;
+.show-header {
+  display: flex;
+  margin-top: -100px;
+  h1 {
+    margin: 0px;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+  }
+};
+
+.main-card {
+  display: flex;
   padding: 20px;
-  font-size: 16px;
+  padding-left: 45px;
+  padding-right: 45px;
+  .description {
+    width: 40%;
+  }
+  .specs {
+    margin-left: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.309);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 20%;
+  }
+  .book-now {
+    border: 5px solid yellow;
+  }
 }
 
 .button {

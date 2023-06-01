@@ -1,21 +1,35 @@
-<div class="container">
-  <%= cl_image_tag(@plane.photo.key, width: 600, height: 400, crop: :fill) %>
+<div class="show-image">
+  <%= cl_image_tag(@plane.photo.key)%>
+</div>
+
+<div class="show-header">
   <h1><%= @plane.model %></h1>
-  <div class = "details">
-    <div class = "details-column">
-      <p>Passenger Capacity: <%= @plane.pax_capacity %></p>
-      <p>Flight Range: <%= @plane.fh_range %> hours</p>
-    </div>
-    <div class = "details-column">
-      <p>Current Location: <%= @plane.location %></p>
-      <p>Flight Hour Price: £<%= @plane.fh_price %></p>
-    </div>
+</div>
+
+<div class="main-card">
+  <div class="description">
+    <h2>About this plane</h2>
+    Introducing the epitome of sky-bound extravagance and bougie bird-brained transportation – the private jet plane! This luxurious marvel of engineering will make you feel like a posh penguin soaring through the stratosphere. Picture this: a sleek and shiny fuselage, shimmering in the sunlight like a disco ball made of diamonds, designed to leave even the most dazzling peacock green with envy.
+    <br>
+    <br>
+    Step inside this airborne palace, and you'll find yourself in a cabin fit for a penguin prince. Plush, velvet-lined seats await, beckoning you to sink into their feathery embrace. And forget peanuts and pretzels – we're talking about gourmet cuisine served on golden platters by impeccably dressed flight attendants. They glide through the cabin like balletic flamingos, ensuring your every whim is met, from caviar cravings to bespoke bubble baths.
   </div>
-  <br>
+  <div class="specs">
+    <h2>Specification</h2>
+    <p>Passenger Capacity: <%= @plane.pax_capacity %></p>
+    <p>Flight Range: <%= @plane.fh_range %> hours</p>
+    <p>Current Location: <%= @plane.location %></p>
+    <p>Flight Hour Price: £<%= @plane.fh_price %></p>
+  </div>
+  <div class="book-now">
+    <%= render "shared/form", booking: @booking, plane: @plane %>
+  </div>
+</div>
 
-  <%= render "shared/form", booking: @booking, plane: @plane %>
 
-  <a href="<%= planes_path %>" class="btn btn-info">See our other planes</a>
+<a href="<%= planes_path %>" class="btn btn-info">See our other planes</a>
+
+</div>
 
   <% if @plane.user == current_user %>
     <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
@@ -43,4 +57,3 @@
     plane_path(@plane),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <% end %>
-</div>
