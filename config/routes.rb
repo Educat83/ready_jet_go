@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'listings/index'
   devise_for :users
   root to: "pages#home"
 
@@ -12,4 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: [:show, :destroy]
+
+  get "listings", to: "listings#index", as: :listings
 end
