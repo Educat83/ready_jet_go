@@ -1,38 +1,54 @@
 <%# <div class="homepage"> %>
-  <div class="banner">
+    <div style='width: 100%; height: 400px; display: flex; flex-direction: column; justify-content: center; position: relative;'>
+      <div class="banner">
     <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
-    <div class="banner-inner-section">
-      <h1>Ready Jet Go</h1>
-      <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
-      <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
+        <h1>Ready Jet Go</h1>
+        <p class="motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
+        <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
+      </div>
     </div>
-  </div>
+
     <div class="fullWidthContainer">
       <h2>Flight your own way</h2>
-    </div>
-    <div class="homeCards">
-      <div class="mycard">
-        <%= image_tag("sunset-plane.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive") %>
-        <h3>Safety Accredited Aircraft,
-        </h3>
-        <p>We give you access to a safety & service accredited aircraft fleet for Jet Card and on-demand flights.</p>
-         <p>As an Argus Certified Broker, we work to the highest industry standards of safety and best practice.</p>
-      </div>
-      <div class="mycard">
-        <%= image_tag("island-view.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive") %>
-        <h3>
-          Anywhere. Any time.
-        </h3>
-        <p>PrivateFly offers private flights between any global airports.</p>
-        <p>Discover your closest private jet airports, see example pricing, destination facts & more.</p>
-        </div>
-      <div class="mycard">
-          <%= image_tag("interior.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive") %>
-        <h3>
-          Flexible private flying.
-        </h3>
-        <p>Our Jet Card gives you the ultimate private flight flexibility.</p>
-        <p>Use your Jet Card for guaranteed availability, flexible cancellation and fixed hourly rates on our safety & service premium fleet.
-        </p>
+      <div class="homeCards">
+        <a class="card2" href="#">
+          <%= image_tag("sunset-plane.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive", style: 'object-position: 87% 50%') %>
+          <h3>Safety Accredited Aircraft,
+          </h3>
+          <p>We give you access to a safety & service accredited aircraft fleet for Jet Card and on-demand flights.</p>
+          <p>As an Argus Certified Broker, we work to the highest industry standards of safety and best practice.</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+        </a>
+        <a class="card2" href="#">
+          <%= image_tag("island-view.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive", style: 'object-position: 15% 50%') %>
+          <h3>
+            Anywhere. Any time.
+          </h3>
+          <p>PrivateFly offers private flights between any global airports.</p>
+          <p>Discover your closest private jet airports, see example pricing, destination facts & more.</p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+          </a>
+        <a class="card2" href="#">
+            <%= image_tag("interior.jpeg", size: "280x190", alt: "Edit Entry", class: "home_card_img responsive") %>
+          <h3>
+            Flexible private flying.
+          </h3>
+          <p>Our Jet Card gives you the ultimate private flight flexibility.</p>
+          <p>Use your Jet Card for guaranteed availability, flexible cancellation and fixed hourly rates on our safety & service premium fleet.
+          </p>
+          <div class="go-corner" href="#">
+            <div class="go-arrow">
+              →
+            </div>
+          </div>
+        </a>
       </div>
     </div>
