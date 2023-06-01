@@ -12,8 +12,9 @@
     </div>
   </div>
   <br>
-  <a href="<%= new_plane_booking_path(@plane) %>" class="button">Book this plane</a>
-  <br>
+
+  <%= render "shared/form", booking: @booking, plane: @plane %>
+
   <a href="<%= planes_path %>" class="btn btn-info">See our other planes</a>
 
   <% if @plane.user == current_user %>
