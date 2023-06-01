@@ -14,7 +14,11 @@
     </div>
   </div>
   <br>
+
   <a href="<%= new_plane_booking_path(@plane) %>" class="button">Book this plane</a>
+
+  <%= render "shared/form", booking: @booking, plane: @plane %>
+
 
   <% if @plane.user == current_user %>
     <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>

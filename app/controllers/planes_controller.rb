@@ -9,7 +9,9 @@ class PlanesController < ApplicationController
                    .distinct
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def new
     @plane = Plane.new
