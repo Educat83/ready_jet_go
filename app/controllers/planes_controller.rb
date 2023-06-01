@@ -3,10 +3,9 @@ class PlanesController < ApplicationController
   before_action :set_plane, only: %i[show update]
 
   def index
-    @date = params[:date]
-    @planes = Plane.left_joins(:bookings)
-                   .where('bookings.id IS NULL OR bookings.date = ?', @date)
-                   .distinct
+    @planes = Plane.all
+    @planes = Plane.left_outer_joins(:bookings).where('planes.id NOT IN (SELECT DISTINCT plane_id FROM bookings WHERE date = ?)', params[:date])
+    @planes = @planes.where('pax_capacity >= ?', params[:passenger_count].to_i)
   end
 
   def show

@@ -80,3 +80,5 @@ group :test do
 end
 
 gem "cloudinary"
+
+gem "pg_search"
