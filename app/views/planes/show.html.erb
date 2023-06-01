@@ -35,8 +35,10 @@
   <% @plane_reviews.each do |booking| %>
   <% unless booking.review.nil? %>
     <li class="list-group-item">
-      <%= booking.review.content %>
-      <%= booking.review.rating %>
+      <p>"<%= booking.review.content %>"<p>
+      <p><% booking.review.rating.to_i.times do %>
+      ⭐️
+      <%end%></p>
     </li>
     <% end %>
   <% end %>
