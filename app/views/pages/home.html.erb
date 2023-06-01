@@ -1,8 +1,20 @@
 <div class="homepage">
-  <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
   <div class="banner">
-    <h1>Ready Jet Go</h1>
-    <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
-    <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
+    <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
+    <div class="banner-card">
+      <h1>Ready Jet Go</h1>
+      <p class = "motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
+      <a href="<%= planes_path %>" class="button">Browse our selection of jets</a>
+    </div>
+  </div>
+  <div class="my-container">
+    <div class="my-title">
+      <h2>Flight your own way</h2>
+    </div>
+    <div class="my-cards">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
   </div>
 </div>
