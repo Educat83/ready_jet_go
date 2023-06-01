@@ -48,33 +48,3 @@
 <% if has_user_booked.any? { |x| x == current_user.id} %>
   <%= link_to "Add a new review", new_plane_review_path(@plane) %>
 <% end %>
-
-<br>
-
-  <% if @plane.user == current_user %>
-    <%= form_with(model: @plane, url: plane_path(@plane), method: :patch) do |form| %>
-      <%= form.label :model %>
-      <%= form.text_field :model %>
-
-      <%= form.label :pax_capacity %>
-      <%= form.text_area :pax_capacity %>
-
-      <%= form.label :fh_range %>
-      <%= form.text_area :fh_range %>
-
-      <%= form.label :fh_price %>
-      <%= form.text_area :fh_price %>
-
-      <%= form.label :location %>
-      <%= form.text_area :location %>
-
-      <%= form.submit "Update Plane" %>
-    <% end %>
-  <% end %>
-
-  <% if @plane.user == current_user %>
-    <%= link_to "Delete",
-    plane_path(@plane),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <% end %>
-</div>

@@ -28,7 +28,6 @@ class PlanesController < ApplicationController
   end
 
   def edit
-    before_action :authenticate_user!
     set_plane
   end
 
