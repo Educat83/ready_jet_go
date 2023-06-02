@@ -66,6 +66,7 @@ range_number = [3, 4, 5, 6, 7, 8, 9, 13]
 
 price_figure = (1500..8000).to_a
 
+# changes jpeg to jpg
 pictures = [
   "https://images.prismic.io/privatefly/9723c90f81d19c285d324a77d3b1f6f7657eeeca_legacy-650-privatefly-aa9745.jpg?auto=compress,format",
   "https://images.prismic.io/privatefly/NmY4ODJjYjEtNmE2Ny00OGI3LTg0MGEtOWE5NjU2OTU5MWIw_falcon-7x-privatefly-aa9723.jpg?auto=compress,format&rect=0,0,846,564&w=846&h=564",

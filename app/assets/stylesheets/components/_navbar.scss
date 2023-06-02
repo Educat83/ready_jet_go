@@ -1,7 +1,8 @@
 .navbar {
   display: flex;
   z-index: 2;
-  background-color: rgb(225, 225, 225);
+  height: 60px;
+  background-color: $white-transparent;
   border-bottom: rgb(42, 42, 42);
   box-shadow: 0 0 15px rgba(0,0,0,0.2)
 }
@@ -19,8 +20,27 @@
 //   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 
 .favicon{
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+}
+
+.favicon:hover{
+  scale: 1.15;
+}
+
+
+.usericon{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.usericon-text{
+  font-size: 14px;
+}
+.usericon:hover{
+  scale: 1.15;
 }
 
   a {
@@ -42,7 +62,7 @@
 
   p {
     margin: 0px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -50,7 +70,9 @@
 
 
 .my-icon{
-
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 .my-icon:hover {
@@ -60,12 +82,13 @@
 
 .login-profile {
   text-align: center;
-  margin-right: 10px;
+  margin-right: 15px;
   color: white;
 
   i {
-    font-size: 40px;
+    font-size: 20px;
     padding-bottom: 5px;
+    margin-left: 10px;
   }
 
   p {
