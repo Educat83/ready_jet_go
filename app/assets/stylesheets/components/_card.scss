@@ -5,12 +5,12 @@
   grid-gap: 30px;
 }
 
-.mycard {
-  background-color: rgb(217, 223, 224);
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
+// .mycard {
+//   background-color: rgb(217, 223, 224);
+//   border-radius: 2px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+//   overflow: hidden;
+// }
 
 .card-body {
   text-align: center;
@@ -36,11 +36,12 @@
 }
 
 .mycard {
+  color: $gray;
   background-color: $light-gray;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 33%;
+  // width: 33%;
   overflow: hidden;
   h3 {
     padding-top: 5%;
@@ -93,26 +94,26 @@ p {
   }
 }
 
-.go-corner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  background-color: #00838d;
-  border-radius: 0 4px 0 32px;
-}
+// .go-corner {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
+//   width: 32px;
+//   height: 32px;
+//   overflow: hidden;
+//   top: 0;
+//   right: 0;
+//   background-color: #00838d;
+//   border-radius: 0 4px 0 32px;
+// }
 
-.go-arrow {
-  margin-top: -4px;
-  margin-right: -4px;
-  color: white;
-  font-family: courier, sans;
-}
+// .go-arrow {
+//   margin-top: -4px;
+//   margin-right: -4px;
+//   color: white;
+//   font-family: courier, sans;
+// }
 
 .card2 {
   display: block;
