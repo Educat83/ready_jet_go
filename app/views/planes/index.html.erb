@@ -1,17 +1,17 @@
 <div class="text-center">
-  <h1 class="myh1">Our planes</h1>
+  <h1 class="indexh1">Explore our selection private jets</h1>
 </div>
 
 
 <%# <% cl_image_path(:cloud_name => cloudinary)%>
 
-<div class="container pb-5">
-  <div class="row col-4 col-sm-12 cards">
+<div class="cards">
+
     <% @planes.each do |plane| %>
       <a href="<%= plane_path(plane.id) %>" class="card-link">
         <div class="mycard">
           <div class="card-img-top text-center" id="pic">
-            <%= cl_image_tag(plane.photo.key, width: 400, height: 240, crop: :fill) %>
+            <%= cl_image_tag(plane.photo.key, width: 325, height: 200, crop: :fill) %>
           </div>
           <div class="card-body my-3">
             <h3><strong><%= plane.model %></strong></h3>
@@ -30,5 +30,5 @@
         </div>
       </a>
     <% end %>
-  </div>
+
 </div>
