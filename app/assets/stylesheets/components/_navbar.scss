@@ -5,6 +5,30 @@
   background-color: $white-transparent;
   border-bottom: rgb(42, 42, 42);
   box-shadow: 0 0 15px rgba(0,0,0,0.2)
+    a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+  }
+
+  a:hover {
+    color: #fff;
+    }
+
+  i {
+    font-size: 40px;
+    padding-bottom: 5px;
+  }
+
+  p {
+    margin: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 }
 
 // .home-button {
@@ -42,32 +66,6 @@
 .usericon:hover{
   scale: 1.15;
 }
-
-  a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s ease 0s;
-  }
-
-  a:hover {
-    color: #fff;
-    }
-
-  i {
-    font-size: 40px;
-    padding-bottom: 5px;
-  }
-
-  p {
-    margin: 0px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
 
 .my-icon{
   width: 40px;
