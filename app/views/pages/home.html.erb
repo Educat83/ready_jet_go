@@ -4,7 +4,7 @@
     <%= video_tag asset_path("homepage-video.mp4"), autoplay: :autoplay, loop: :loop, muted: :muted, class: "home_video"%>
         <h1>Ready Jet Go</h1>
         <p class="motto"><em>Your Jet, Your Journey... Ready Jet Go</em></p>
-    <%= form_tag planes_path, method: :get, class: "d-flex justify-content-around myform" do %>
+      <%= form_tag planes_path, method: :get, class: "d-flex justify-content-around myform" do %>
       <div class="form-group my-date-field">
         <%= label_tag :date, "Select a Date" %>
         <%= date_field_tag :date, value: params[:date] %>
