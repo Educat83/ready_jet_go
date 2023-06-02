@@ -1,16 +1,10 @@
 .cards {
   display: grid;
   flex-grow: 1;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
+  padding-left: 25px
 }
-
-// .mycard {
-//   background-color: rgb(217, 223, 224);
-//   border-radius: 2px;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-//   overflow: hidden;
-// }
 
 .card-body {
   text-align: center;
@@ -21,27 +15,23 @@
   text-decoration: none;
 }
 
-.myh1 {
-  padding: 15px;
-  font-size: 32px;
+.indexh1 {
+  padding: 30px;
+  font-size: 46px;
+  font-family: 'Raleway';
+  font-style: italic;
   color: #333;
-  font-weight: bold;
+  font-weight: 400;
   text-transform: uppercase;
-}
-
-.my-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
 }
 
 .mycard {
   color: $gray;
   background-color: $light-gray;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
-  // width: 33%;
+  width: 325px;
   overflow: hidden;
   h3 {
     padding-top: 5%;
