@@ -57,6 +57,7 @@ range_number = [3, 4, 5, 6, 7, 8, 9, 13]
 
 price_figure = (1500..8000).to_a
 
+# changes jpeg to jpg
 pictures = [
   "https://images.prismic.io/privatefly/9723c90f81d19c285d324a77d3b1f6f7657eeeca_legacy-650-privatefly-aa9745.jpg?auto=compress,format",
   "https://images.prismic.io/privatefly/NmY4ODJjYjEtNmE2Ny00OGI3LTg0MGEtOWE5NjU2OTU5MWIw_falcon-7x-privatefly-aa9723.jpg?auto=compress,format&rect=0,0,846,564&w=846&h=564",
@@ -66,20 +67,20 @@ pictures = [
   "https://images.prismic.io/privatefly/848e6a1742961dea2f7029e96c140e2603e2ad2a_cessna-citation-longitude-privatefly-aa9631.jpg?auto=compress,format",
   "https://images.prismic.io/privatefly/f9b23fc1dc2893ec87a5c55260e47ccc2c802c2a_bombardier-global-6000-privatefly-aa9562.jpg?auto=compress,format",
   "app/assets/images/planes_seed/seed_1.jpg",
-  "app/assets/images/planes_seed/seed_2.jpeg",
+  "app/assets/images/planes_seed/seed_2.jpg",
   "app/assets/images/planes_seed/seed_3.jpg",
-  "app/assets/images/planes_seed/seed_4.jpeg",
+  "app/assets/images/planes_seed/seed_4.jpg",
   "app/assets/images/planes_seed/seed_5.jpg",
   "app/assets/images/planes_seed/seed_6.jpg",
   "app/assets/images/planes_seed/seed_7.jpg",
-  "app/assets/images/planes_seed/seed_8.jpeg",
-  "app/assets/images/planes_seed/seed_9.jpeg",
+  "app/assets/images/planes_seed/seed_8.jpg",
+  "app/assets/images/planes_seed/seed_9.jpg",
   "app/assets/images/planes_seed/seed_10.jpg",
   "app/assets/images/planes_seed/seed_11.jpg",
-  "app/assets/images/planes_seed/seed_11.jpeg",
-  "app/assets/images/planes_seed/seed_12.jpeg",
-  "app/assets/images/planes_seed/seed_13.jpeg",
-  "app/assets/images/planes_seed/seed_14.jpeg"
+  "app/assets/images/planes_seed/seed_11.jpg",
+  "app/assets/images/planes_seed/seed_12.jpg",
+  "app/assets/images/planes_seed/seed_13.jpg",
+  "app/assets/images/planes_seed/seed_14.jpg"
 ]
 # airport = ['LHR', 'STN', 'GTW', 'LTN', 'LCY']
 
