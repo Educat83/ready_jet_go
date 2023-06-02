@@ -1,0 +1,48 @@
+.booking-title {
+  margin: 20px;
+}
+
+.booking-container {
+  width: 65%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.booking-cards {
+  margin-top: 30px;
+  border-bottom: 1px solid grey;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmed {
+  font-weight: bold;
+}
+
+.booking-card-confirmed {
+  margin-bottom: 30px;
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.booking-links {
+  margin-top: -40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  a {
+    margin-right: 5px;
+  }
+}
