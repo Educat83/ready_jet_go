@@ -1,5 +1,5 @@
-<div class='title'>
-<h1>Your bookings index</h1>
+<div class='booking-title'>
+  <h1><%= current_user.first_name %> bookings</h1>
 </div>
 
 <% my_bookings = @bookings.select { |booking| booking.user_id == current_user.id} %>
@@ -7,21 +7,31 @@
 <br>
 <h5 class="text-center">You've not made any bookings yet!</h5>
 <% else %>
-<div class="container">
-  <div class="my-cards">
-    <% my_bookings.each do |booking| %>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Booking reference: <%= booking.id %></h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary"> Cost: <%= number_to_currency(booking.total_price, :unit => "£") %></h6>
-          <p class="card-text"> Date: <%= booking.date %> </p>
-          <%= link_to 'Modify', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
-          <%= link_to "Cancel it!",
-            booking_path(booking),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
+
+<div class="booking-container">
+  <% my_bookings.each do |booking| %>
+    <div class="booking-cards">
+      <div class="card-top">
+        <div class="booking-card-confirmed">
+          <p class="confirmed">Confirmed booking</p>
+        </div>
+        <div class="booking-card">
+          <div class="booking-details">
+            <p>Booking reference: <%= booking.id %></p>
+            <p>Hours: <%= booking.total_hours %> hours</p>
+            <p>Date: <%= booking.date %></p>
+            <p>Cost: <%= number_to_currency(booking.total_price, :unit => "£") %></p>
+          </div>
         </div>
       </div>
-    <% end %>
-  </div>
+
+      <div class="booking-links">
+        <%= link_to 'Review', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
+        <%= link_to 'Modify', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
+        <%= link_to "Cancel it!", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  <% end %>
 </div>
+
 <% end %>
