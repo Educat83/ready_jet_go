@@ -91,7 +91,7 @@ pictures = [
 ]
 # airport = ['LHR', 'STN', 'GTW', 'LTN', 'LCY']
 
-5.times do
+50.times do
   plane = Plane.new(
     model: "#{plane_names.sample} #{plane_number.sample}",
     location: 'LHR',
