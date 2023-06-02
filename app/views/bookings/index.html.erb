@@ -1,5 +1,5 @@
 <div class='booking-title'>
-  <h1><%= current_user.first_name %> bookings</h1>
+  <h1><%= current_user.first_name %>'s Bookings</h1>
 </div>
 
 <% my_bookings = @bookings.select { |booking| booking.user_id == current_user.id} %>
@@ -18,7 +18,7 @@
         <div class="booking-card">
           <div class="booking-details">
             <p>Booking reference: <%= booking.id %></p>
-            <p>Hours: <%= booking.total_hours %> hours</p>
+            <p>Flight duration: <%= booking.total_hours %> hours</p>
             <p>Date: <%= booking.date %></p>
             <p>Cost: <%= number_to_currency(booking.total_price, :unit => "£") %></p>
           </div>
@@ -26,11 +26,55 @@
       </div>
 
       <div class="booking-links">
-        <%= link_to 'Review', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
-        <%= link_to 'Modify', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
-        <%= link_to "Cancel it!", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Review
+        </button>
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+          Edit
+        </button>
+        <%= link_to "Cancel", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secondary" %>
       </div>
     </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Review</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2>New Review</h2>
+            <%= simple_form_for [booking, @review] do |f| %>
+              <%= f.input :content %>
+              <%= f.input :rating, collection: 1..5 %>
+              <%= f.submit "Submit review", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Booking</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h1>Edit Booking <%= booking.id %></h1>
+            <%= render "shared/form", booking: booking, plane: booking.plane %>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
 
