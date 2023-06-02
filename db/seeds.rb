@@ -131,7 +131,7 @@ puts 'Bookings data base created'
 puts 'Creating reviews db'
 count = 1
 review_content = [
-  "My seat  perfectly cushioned by my $3,000 suit trousers. This is style",
+  "My seat  perfectly cushioned my $3,000 suit trousers. This is style",
   "I never want to travel alongside commoners again.",
   "I've never burned so much CO2 in such short a time, I feel so powerful",
   "My plane passed Elon's over Florida, I gave him a wave!",
