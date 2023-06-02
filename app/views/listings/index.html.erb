@@ -16,7 +16,7 @@
             <p>Plane: <%= plane.model %></p>
           </span>
           <span>
-            <p>Number of booking: <%= plane.bookings.count %></p>
+            <p>Number of bookings: <%= plane.bookings.count %></p>
           </span>
           <span>
             <i class="fa-solid fa-users"></i>
@@ -30,15 +30,37 @@
       </div>
       <div class="user-div">
         <div class="button-div">
-          <%= link_to edit_plane_path(plane) do %>
-            <button type="button" class="btn btn-outline-warning">Edit</button>
-          <% end %>
+            <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">Edit</button>
           <%= link_to listings_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <button type="button" class="btn btn-outline-danger">Delete</button>
           <% end %>
         </div>
       </div>
     </div>
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Plane</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2>Edit your plane</h2>
+              <%= simple_form_for plane do |f| %>
+                <%= f.input :model %>
+                <%= f.input :pax_capacity, label: "Seat capacity" %>
+                <%= f.input :fh_range, label: "Flight Hours" %>
+                <%= f.input :fh_price, label: "Flight Hour Price" %>
+                <%= f.input :location, collection: ['LHR', 'STN', 'GTW', 'LTN', 'LCY'] %>
+                <%= f.submit "Update Plane", class: "btn btn-primary" %>
+              <% end %>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
 
   <% if current_user.planes.count == 0 %>
