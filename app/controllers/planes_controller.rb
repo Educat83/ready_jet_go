@@ -5,7 +5,7 @@ class PlanesController < ApplicationController
   def index
     if params[:date].present?
       @planes = Plane.left_outer_joins(:bookings).where('planes.id NOT IN (SELECT DISTINCT plane_id FROM bookings WHERE date = ?)', params[:date])
-      @planes = @planes.where('pax_capacity >= ?', params[:passenger_count].to_i)
+      @planes = @planes.where('pax_capacity >= ?', params[:passenger_count].to_i).uniq
     else
       @planes = Plane.all
     end
