@@ -2,11 +2,6 @@
   <%= cl_image_tag(@plane.photo.key)%>
 </div>
 
-<div class="show-header">
-  <h1><%= @plane.model %></h1>
-  <a href="<%= planes_path %>" class="btn btn-info">See our other planes</a>
-</div>
-
 <div class="main-card">
   <div class="description">
     <h2>About this plane</h2>
@@ -20,33 +15,29 @@
     <p>Passenger Capacity: <%= @plane.pax_capacity %></p>
     <p>Flight Range: <%= @plane.fh_range %> hours</p>
     <p>Current Location: <%= @plane.location %></p>
-    <p>Flight Hour Price: £<%= @plane.fh_price %></p>
+    <p>Flight Hour Price: <%= number_to_currency(@plane.fh_price, :unit => "£")%></p>
   </div>
   <div class="book-now">
     <p class="card-header">Book now!</p>
     <%= render "shared/form", booking: @booking, plane: @plane %>
   </div>
-</div>
 
 
 </div>
-  <p><strong>Reviews</strong></p>
-<ul class="list-group">
-  <% @plane_reviews.each do |booking| %>
-  <% unless booking.review.nil? %>
-    <li class="list-group-item">
-      <p>"<%= booking.review.content %>"<p>
-      <p><% booking.review.rating.to_i.times do %>
-      ⭐️
-      <%end%></p>
-    </li>
+
+<div class = "reviews-card card">
+  <p class = "card-header text-center"><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @plane_reviews.each do |booking| %>
+    <% unless booking.review.nil? %>
+      <li class="list-group-item text-center">
+        <p>"<%= booking.review.content %>"<p>
+        <p><% booking.review.rating.to_i.times do %>
+        ⭐️
+        <%end%></p>
+        <p> <%= booking.user.first_name %> </p>
+      </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
-
-<br>
-
-<% has_user_booked = @plane_reviews.map { |x| p x.user_id} %>
-<% if has_user_booked.any? { |x| x == current_user.id} %>
-  <%= link_to "Add a new review", new_plane_review_path(@plane) %>
-<% end %>
+  </ul>
+</div>

@@ -12,11 +12,20 @@ puts 'Cleaning plane data base'
 Plane.destroy_all
 
 # User creation
+
+first_names = [
+  "Liam", "Olivia", "Noah", "Emma", "Oliver", "Ava", "Elijah", "Charlotte", "William", "Sophia",
+  "James", "Amelia", "Benjamin", "Isabella", "Lucas", "Mia", "Henry", "Evelyn", "Alexander", "Harper",
+  "Michael", "Abigail", "Daniel", "Emily", "Matthew", "Elizabeth", "Aiden", "Sofia", "Joseph", "Ella",
+  "Jackson", "Avery", "Samuel", "Scarlett", "Sebastian", "Grace", "David", "Chloe", "Carter", "Victoria",
+  "Wyatt", "Riley", "John", "Zoe", "Owen", "Hannah", "Jack", "Nora", "Luke", "Lily"
+]
+
 puts 'Creating user db'
 count = 1
 10.times do
   user = User.new(
-    first_name: "user name#{count}",
+    first_name: first_names.sample,
     last_name: "user surname#{count}",
     email: "something#{count}@hotmail.com",
     password: "123456"
@@ -75,8 +84,6 @@ pictures = [
   "app/assets/images/planes_seed/seed_7.jpg",
   "app/assets/images/planes_seed/seed_8.jpg",
   "app/assets/images/planes_seed/seed_9.jpg",
-  "app/assets/images/planes_seed/seed_10.jpg",
-  "app/assets/images/planes_seed/seed_11.jpg",
   "app/assets/images/planes_seed/seed_11.jpg",
   "app/assets/images/planes_seed/seed_12.jpg",
   "app/assets/images/planes_seed/seed_13.jpg",
@@ -98,4 +105,60 @@ pictures = [
   plane.save!
   puts "Created #{Plane.count} planes"
 end
-puts "Planes created"
+puts "Planes data base created"
+
+# booking_seeding
+puts 'Creating bookings db'
+count = 1
+Plane.all.each do |plane|
+  4.times do
+    user = User.find(rand(1..(User.all.length - 1)))
+    Booking.create(
+      total_hours: plane.fh_range,
+      total_price: (plane.fh_price * plane.fh_range),
+      date: Date.today,
+      user_id: user.id,
+      plane_id: plane.id
+    )
+    count += 1
+    puts "created #{Booking.count} users"
+  end
+end
+
+puts 'Bookings data base created'
+# review_seeding
+
+puts 'Creating reviews db'
+count = 1
+review_content = [
+  "My seat  perfectly cushioned by my $3,000 suit trousers. This is style",
+  "I never want to travel alongside commoners again.",
+  "I've never burned so much CO2 in such short a time, I feel so powerful",
+  "My plane passed Elon's over Florida, I gave him a wave!",
+  "The increased turbulence and fear of death was exhilirating!",
+  "I took my seatbelt off before the sign, and no one told me off. Freedom!",
+  "My family and I have never been more aware of our wealth. Thanks Ready Jet Go!",
+  "This plane changed my life.",
+  "Me and the pilot took turns doing barrel rolls",
+  "I walked straight onto the plane with over 100ml of fluids. Never flying public again!",
+  "I screamed the whole way. No one looked at me weirdly!",
+  "I asked the plane to weave in between buildings and we almost crashed. It was awesome!",
+  "I. Am. Elite.",
+  "Finally, I'm able to put some distance between myself and the poor!",
+  "Take that, environment!",
+  "I'm now able to bribe politicians in record time. God bless Ready Jet Go!"
+]
+
+review_rating = [4, 5]
+
+Booking.all.each do |booking|
+  Review.create(
+    content: review_content.sample,
+    booking_id: booking.id,
+    rating: review_rating.sample
+  )
+  count += 1
+  puts "created #{Review.count} reviews"
+end
+
+puts 'Reviews data base created'
