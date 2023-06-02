@@ -13,7 +13,7 @@
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Booking reference: <%= booking.id %></h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary"> Cost: £<%= booking.total_price %></h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary"> Cost: <%= number_to_currency(booking.total_price, :unit => "£") %></h6>
           <p class="card-text"> Date: <%= booking.date %> </p>
           <%= link_to 'Modify', edit_plane_booking_path(booking.plane.id, booking.id), class: "btn btn-primary"  %>
           <%= link_to "Cancel it!",
