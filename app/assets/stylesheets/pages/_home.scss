@@ -9,7 +9,8 @@ h1 {
 
 .main-title {
   font-size: 55px;
-  font-weight: bolder;
+  font-family: 'Raleway';
+  font-weight: bold;
   margin-bottom: 40px;
   font-style: italic;
   color: #151414;
@@ -17,9 +18,17 @@ h1 {
 .motto {
   font-size: 26px;
   margin-bottom: 50px;
+  font-family: 'Raleway'!important;
   color: #0b082c;
 }
 
+.flyway {
+  font-family: 'Raleway'
+  font-weight bold;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 25px;
+}
 .button {
   display: inline-block;
   padding: 12px 24px;
