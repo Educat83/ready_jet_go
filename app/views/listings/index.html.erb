@@ -40,4 +40,9 @@
       </div>
     </div>
   <% end %>
+
+  <% if current_user.planes.count == 0 %>
+    <p class="add-booking">You have no listings. <%= link_to "Add a plane here +", new_plane_path %></p>
+    <%  %>
+  <% end %>
 </div>
