@@ -4,6 +4,7 @@
       <%= image_tag 'plane-icon-256.png', alt: "plane", class: "favicon" %>
     <% end %>
 
+    <% if params[:action] == "index" && params[:controller] == "planes" %>
     <%= form_tag planes_path, method: :get, class: "d-flex align-items-center" do %>
       <div class="form-group my-date-field">
         <%= label_tag :date, "Select a Date" %>
@@ -15,6 +16,7 @@
       </div>
       <%= submit_tag "Browse", class: "btn btn-light my-button ml-2" %>
     <% end %>
+     <% end %>
 
     <div class="dropdown">
       <div class="login-profile d-flex align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
