@@ -64,7 +64,22 @@ pictures = [
   "https://images.prismic.io/privatefly/bb86c2e82007227aceff717b0c5a0aac77d3fadf_gulfstream-g450-privatefly-aa9817.jpg?auto=compress,format",
   "https://images.prismic.io/privatefly/91a07c2fccf016266e2b4aac2a9c2cd62fc8c238_challenger-850-privatefly-aa9668.jpg?auto=compress,format",
   "https://images.prismic.io/privatefly/848e6a1742961dea2f7029e96c140e2603e2ad2a_cessna-citation-longitude-privatefly-aa9631.jpg?auto=compress,format",
-  "https://images.prismic.io/privatefly/f9b23fc1dc2893ec87a5c55260e47ccc2c802c2a_bombardier-global-6000-privatefly-aa9562.jpg?auto=compress,format"
+  "https://images.prismic.io/privatefly/f9b23fc1dc2893ec87a5c55260e47ccc2c802c2a_bombardier-global-6000-privatefly-aa9562.jpg?auto=compress,format",
+  "app/assets/images/planes_seed/seed_1.jpg",
+  "app/assets/images/planes_seed/seed_2.jpeg",
+  "app/assets/images/planes_seed/seed_3.jpg",
+  "app/assets/images/planes_seed/seed_4.jpeg",
+  "app/assets/images/planes_seed/seed_5.jpg",
+  "app/assets/images/planes_seed/seed_6.jpg",
+  "app/assets/images/planes_seed/seed_7.jpg",
+  "app/assets/images/planes_seed/seed_8.jpeg",
+  "app/assets/images/planes_seed/seed_9.jpeg",
+  "app/assets/images/planes_seed/seed_10.jpg",
+  "app/assets/images/planes_seed/seed_11.jpg",
+  "app/assets/images/planes_seed/seed_11.jpeg",
+  "app/assets/images/planes_seed/seed_12.jpeg",
+  "app/assets/images/planes_seed/seed_13.jpeg",
+  "app/assets/images/planes_seed/seed_14.jpeg"
 ]
 # airport = ['LHR', 'STN', 'GTW', 'LTN', 'LCY']
 
