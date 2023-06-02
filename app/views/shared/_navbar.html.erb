@@ -1,10 +1,8 @@
-<% if user_signed_in? %>
-  <div class="navbar d-flex align-items-center justify-content-between">
-    <%= link_to planes_path, class: "navbar-item d-flex align-items-center" do %>
+<div class="navbar d-flex align-items-center justify-content-between">
+  <% if params[:action] == "index" && params[:controller] == "planes" %>
+    <%= link_to root_path, class: "navbar-item d-flex align-items-center" do %>
       <%= image_tag 'plane-icon-256.png', alt: "plane", class: "favicon" %>
     <% end %>
-
-    <% if params[:action] == "index" && params[:controller] == "planes" %>
     <%= form_tag planes_path, method: :get, class: "d-flex align-items-center" do %>
       <div class="form-group my-date-field">
         <%= label_tag :date, "Select a Date" %>
@@ -16,8 +14,13 @@
       </div>
       <%= submit_tag "Browse", class: "btn btn-light my-button ml-2" %>
     <% end %>
-     <% end %>
+  <% else %>
+    <%= link_to planes_path, class: "navbar-item d-flex align-items-center" do %>
+      <%= image_tag 'plane-icon-256.png', alt: "plane", class: "favicon" %>
+    <% end %>
+  <% end %>
 
+  <% if user_signed_in? %>
     <div class="dropdown">
       <div class="login-profile d-flex align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= image_tag 'user1.png', alt: "user", class: "usericon" %>
@@ -31,27 +34,7 @@
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"%>
       </div>
     </div>
-  </div>
-<% else %>
-  <div class="navbar d-flex align-items-center justify-content-between">
-    <%= link_to planes_path, class: "navbar-item d-flex align-items-center" do %>
-      <%= image_tag 'plane-icon-256.png', alt: "plane", class: "favicon" %>
-    <% end %>
-
-    <% if params[:action] == "index" && params[:controller] == "planes" %>
-    <%= form_tag planes_path, method: :get, class: "d-flex align-items-center" do %>
-      <div class="form-group my-date-field">
-        <%= label_tag :date, "Select a Date" %>
-        <%= date_field_tag :date, value: params[:date] %>
-      </div>
-      <div class="form-group my-passenger-field">
-        <%= label_tag :passenger_count, "Number of Passengers" %>
-        <%= select_tag :passenger_count, options_for_select((1..30).to_a) %>
-      </div>
-      <%= submit_tag "Browse", class: "btn btn-light my-button ml-2" %>
-    <% end %>
-     <% end %>
-
+  <% else %>
     <div class="navbar-right d-flex align-items-center">
       <%= link_to new_user_session_path, class: "btn btn-outline-light mr-5 btlog" do %>
         <p>Login</p>
@@ -60,5 +43,5 @@
         <p>Sign up</p>
       <% end %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
