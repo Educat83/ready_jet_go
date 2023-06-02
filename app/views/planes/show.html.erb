@@ -15,7 +15,7 @@
     <p>Passenger Capacity: <%= @plane.pax_capacity %></p>
     <p>Flight Range: <%= @plane.fh_range %> hours</p>
     <p>Current Location: <%= @plane.location %></p>
-    <p>Flight Hour Price: £<%= @plane.fh_price %></p>
+    <p>Flight Hour Price: <%= number_to_currency(@plane.fh_price, :unit => "£")%></p>
   </div>
   <div class="book-now">
     <p class="card-header">Book now!</p>
