@@ -20,8 +20,8 @@
 
     <div class="dropdown">
       <div class="login-profile d-flex align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa-solid fa-user"></i>
-        <p class="ml-2 mb-0"><%= current_user.first_name.capitalize %></p>
+        <%= image_tag 'user1.png', alt: "user", class: "usericon" %>
+        <p class="ml-2 mb-0 usericon-text"><%= current_user.first_name.capitalize %></p>
       </div>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to "Your bookings", bookings_path, class: "dropdown-item"%>
